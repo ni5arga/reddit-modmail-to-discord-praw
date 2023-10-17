@@ -1,5 +1,8 @@
 import praw
 import requests
+import logging
+
+logging.basicConfig(filename='bot.log', level=logging.INFO)
 
 reddit_client_id = 'YOUR_REDDIT_CLIENT_ID'
 reddit_client_secret = 'YOUR_REDDIT_CLIENT_SECRET'
@@ -31,8 +34,8 @@ try:
             response = requests.post(discord_webhook_url, json=discord_payload)
 
             if response.status_code == 204:
-                print('Message sent to Discord successfully!')
+                logging.info('Message sent to Discord successfully!')
             else:
-                print(f'Failed to send message to Discord. Status code: {response.status_code}')
+                logging.error(f'Failed to send message to Discord. Status code: {response.status_code}')
 except Exception as e:
-    print(f'An error occurred: {str(e)}')
+    logging.error(f'An error occurred: {str(e)}')
