@@ -27,8 +27,15 @@ try:
         for message in message.messages:
             message_text = f'From: {message.author}\nSubject: {message.subject}\n\n{message.body}'
 
+            discord_embed = {
+                "title": message.subject,
+                "description": message_text,
+                "url": message.permalink,
+                "color": 0x00FF00  
+            }
+
             discord_payload = {
-                'content': message_text
+                'embeds': [discord_embed]
             }
 
             response = requests.post(discord_webhook_url, json=discord_payload)
