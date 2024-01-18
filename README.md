@@ -23,7 +23,7 @@ Before using this script, you need to have the following:
    pip install -r requirements.txt
    ```
 
-3. Open the reddit_to_discord.py script in a text editor.
+3. Open the main.py script in a text/code editor.
 
 Replace the following placeholders with your actual information:
 
