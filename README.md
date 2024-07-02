@@ -1,4 +1,4 @@
-# Reddit to Discord Modmail Bot
+# Reddit to Discord Modmail Bot (PRAW)
 
 This Python script is designed to create a Reddit bot that monitors incoming modmails to a specific subreddit and sends them to a Discord channel using webhooks.
 
